@@ -20,28 +20,6 @@ def gaussian_eliminator(first_equation: list, *args) -> list:
             system = new_system
             system = align_system(system.copy())
             print(system)
-
-  # num_equations = len(system)
-  # num_non_free_variables = len(first_equation) - 1
-  # num_free_variables = num_equations - num_non_free_variables
-  # print()
-
-  # While the equation is not the first one, and it's x-coefficient is not zero
-  # index = 0
-  # for equation in system:
-  #   if index != 0 and equation[0] != 0:
-  #     factor = -(system[index][0] / system[0][0])
-  #     print(f"Row 1 * {factor} + Row {index+1}")
-  #     system[index] = np.add(system[index], (system[0] * factor))
-  #     print(system)
-  #   index += 1
-
-  # while system[-1][0] != 0:
-  #   factor = -(system[-1][0] / system[-2][0])
-  #   print(f"Row 1 * {factor} + Row 2")
-  #   modified_row = np.add(system[-1], (system[-2] * factor))
-  #   system[-1] = modified_row
-  # print(f"Final Result:\n {system}")
     return system
 
 
@@ -74,8 +52,7 @@ def align_system(input_system):
         next_row += 1
         current_row += 1
     return input_system
-  # First step is to get rid of x in the second equation, if present
-  # if y[0] == 0:
+
 
 # Add any number of equations and variables, last place in the array is for the value of the equation
 x = np.array([1, 2, 3, 4, 3])
