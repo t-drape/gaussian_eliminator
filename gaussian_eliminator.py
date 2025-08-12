@@ -77,7 +77,7 @@ def align_system(input_system):
   # First step is to get rid of x in the second equation, if present
   # if y[0] == 0:
 
-
+# Add any number of equations and variables, last place in the array is for the value of the equation
 x = np.array([1, 2, 3, 4, 3])
 y = np.array([-1, -4, 3, 8, -6])
 z = np.array([1, 4, 6, 12, 3])
