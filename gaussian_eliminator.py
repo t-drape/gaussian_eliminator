@@ -7,13 +7,13 @@ import numpy as np
 
 # Now, assume equations are given in echelon form
 # Scale to n equations
-def gaussian_eliminator(first_equation: list, *args) -> list:
+def gaussian_eliminator(*args) -> list:
     """ Performs Gaussian Elimination on the input linear system """
-    system = np.array([first_equation] + list(args))
+    system = np.array(list(args))
     # Echelon Form
     system = align_system(system)
 
-    num_variables = len(first_equation)
+    num_variables = len(system[0])
     for current_variable in range(0, num_variables):
         new_system = reduce_system(current_variable, system.copy())
         if not(np.array_equal(new_system, system)):
@@ -59,6 +59,4 @@ x = np.array([1, 2, 3, 4, 3])
 y = np.array([-1, -4, 3, 8, -6])
 z = np.array([1, 4, 6, 12, 3])
 my_system = np.array([x, y, z])
-gaussian_eliminator(x, y, z)
-
-
+gaussian_eliminator(x,y,z)
